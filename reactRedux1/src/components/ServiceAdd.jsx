@@ -12,9 +12,9 @@ export default function ServiceAdd() {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    evt.target.reset();
-    console.log(item);
     dispatch(addService(item.name, item.price));
+    dispatch(changeService('name', ''));
+    dispatch(changeService('price', ''));
   };
 
   return (

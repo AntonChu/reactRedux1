@@ -9,7 +9,7 @@ const serviceAddReducer = (state = initialState, action) => {
       return { ...state, [name]: value };
     case FIX_SERVICE_FIELD:
       const { id } = action.payload;
-      return { ...state, id }
+      return { ...state, [id]: id }
     default:
       return state;
   }
