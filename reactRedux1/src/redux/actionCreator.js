@@ -13,5 +13,5 @@ export function changeService(name, value) {
 }
 
 export function fixService(id) {
-  return { type: FIX_SERVICE_FIELD, payload: { id } }
+  return { type: FIX_SERVICE_FIELD, payload: { key } }
 }

@@ -1,6 +1,6 @@
 import { CHANGE_SERVICE_FIELD, FIX_SERVICE_FIELD } from "./action";
 
-const initialState = { name: "", price: "" };
+const initialState = {key: "", name: "", price: "" };
 
 const serviceAddReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -8,8 +8,8 @@ const serviceAddReducer = (state = initialState, action) => {
       const { name, value } = action.payload;
       return { ...state, [name]: value };
     case FIX_SERVICE_FIELD:
-      const { id } = action.payload;
-      return { ...state, [id]: id }
+      const { key } = action.payload;
+      return { ...state, key}
     default:
       return state;
   }
