@@ -1,20 +1,20 @@
 import { useSelector, useDispatch } from "react-redux";
-import { removeService, fixService, changeService, addService } from "../redux/actionCreator";
+import { removeService, fixService, changeService, addService, changeEditStatus } from "../redux/actionCreator";
 
 export default function ServiceList() {
   const items = useSelector((state) => state.serviceList);
   const item2 = useSelector((state) => state.serviceAdd);
-  console.log(items);
-  console.log(item2);
+
 
   const dispatch = useDispatch();
 
   const handleFix = (key) => {
-    console.log(key)
+    console.log('key', key)
     const item = items.find(el => el.id === key);
     console.log(item)
     dispatch(changeService('name', item.name));
     dispatch(changeService('price', item.price));
+    dispatch(changeEditStatus(item.id))
     // dispatch(addService(key));
   }
 

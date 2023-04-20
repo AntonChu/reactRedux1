@@ -1,4 +1,4 @@
-import { ADD_SERVICE, REMOVE_SERVICE, CHANGE_SERVICE_FIELD, FIX_SERVICE_FIELD } from "./action";
+import { ADD_SERVICE, REMOVE_SERVICE, CHANGE_SERVICE_FIELD, FIX_SERVICE_FIELD, UPDATE_SERVICE, CHANGE_EDIT_STATE } from "./action";
 
 export function addService(name, price) {
   return { type: ADD_SERVICE, payload: { name, price } };
@@ -14,4 +14,13 @@ export function changeService(name, value) {
 
 export function fixService(id) {
   return { type: FIX_SERVICE_FIELD, payload: { key } }
+}
+
+export function changeEditStatus(editId) {
+
+  return { type: CHANGE_EDIT_STATE, payload: { editId } }
+}
+
+export function updateService(id, data) {
+  return { type: UPDATE_SERVICE, payload: { id, data } }
 }
